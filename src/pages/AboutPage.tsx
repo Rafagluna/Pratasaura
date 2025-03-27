@@ -5,7 +5,7 @@ import { Star, Award, Users, Shield } from 'lucide-react';
 function AboutPage() {
   const team = [
     {
-      name: 'Maria Silva',
+      name: 'Maria Luna',
       role: 'Fundadora & CEO',
       image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=400',
     },
