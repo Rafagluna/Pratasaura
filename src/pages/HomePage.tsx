@@ -34,6 +34,25 @@ const gallery = {
   ]
 };
 
+const peopleWearing = [
+  {
+    image: 'https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?auto=format&fit=crop&q=80&w=800',
+    caption: 'Elegância em cada momento'
+  },
+  {
+    image: '../../dist/assets/img/usando_joia.jpg',
+    caption: 'Estilo que brilha'
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&q=80&w=800',
+    caption: 'Beleza autêntica'
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1550614000-4895a10e1bfd?auto=format&fit=crop&q=80&w=800',
+    caption: 'Momentos especiais'
+  }
+];
+
 const benefits = [
   {
     icon: <Truck className="w-12 h-12 mb-4" />,
@@ -113,39 +132,8 @@ function HomePage() {
         </div>
       </section>
 
-      {/* Featured Products */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">Produtos em Destaque</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {products.map((product) => (
-              <div key={product.id} className="group">
-                <Link to={`/product/${product.id}`} className="block">
-                  <div className="relative overflow-hidden rounded-lg">
-                    <img src={product.image} alt={product.name} className="w-full h-64 object-cover transition duration-300 group-hover:scale-110" />
-                    <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                      <Heart className="w-6 h-6 text-white cursor-pointer" />
-                    </div>
-                  </div>
-                  <div className="mt-4">
-                    <h3 className="text-lg font-semibold">{product.name}</h3>
-                    <p className="text-[#60AACD] font-bold mt-2">{product.price}</p>
-                  </div>
-                </Link>
-                <button 
-                  onClick={() => addToCart(product)}
-                  className="mt-3 w-full bg-[#60AACD] text-white py-2 rounded hover:bg-[#4d8ba8] transition duration-300"
-                >
-                  Adicionar ao Carrinho
-                </button>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Gallery */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Brilliant moments collection</h2>
@@ -179,6 +167,58 @@ function HomePage() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Products */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-12">Produtos em Destaque</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {products.map((product) => (
+              <div key={product.id} className="group">
+                <Link to={`/product/${product.id}`} className="block">
+                  <div className="relative overflow-hidden rounded-lg">
+                    <img src={product.image} alt={product.name} className="w-full h-64 object-cover transition duration-300 group-hover:scale-110" />
+                    <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <Heart className="w-6 h-6 text-white cursor-pointer" />
+                    </div>
+                  </div>
+                  <div className="mt-4">
+                    <h3 className="text-lg font-semibold">{product.name}</h3>
+                    <p className="text-[#60AACD] font-bold mt-2">{product.price}</p>
+                  </div>
+                </Link>
+                <button 
+                  onClick={() => addToCart(product)}
+                  className="mt-3 w-full bg-[#60AACD] text-white py-2 rounded hover:bg-[#4d8ba8] transition duration-300"
+                >
+                  Adicionar ao Carrinho
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* People Wearing Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-12">Inspire-se</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {peopleWearing.map((item, index) => (
+              <div key={index} className="relative group overflow-hidden rounded-lg">
+                <img 
+                  src={item.image} 
+                  alt={item.caption}
+                  className="w-full h-96 object-cover transition duration-300 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-6">
+                  <p className="text-white text-lg font-medium">{item.caption}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
