@@ -6,17 +6,17 @@ import { TestimonialsSection } from '../components/TestimonialsSection';
 import { useCart } from '../context/CartContext';
 
 const categories = [
-  { id: 1, name: 'Anéis', image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&q=80&w=400' },
-  { id: 2, name: 'Colares', image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&q=80&w=400' },
-  { id: 3, name: 'Brincos', image: 'https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&q=80&w=400' },
-  { id: 4, name: 'Pulseiras', image: 'https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&q=80&w=400' },
+  { id: 1, name: 'Anéis', image: '../../dist/assets/img/anel_produto.png' },
+  { id: 2, name: 'Colares', image: '../../dist/assets/img/cordao_produto.png' },
+  { id: 3, name: 'Brincos', image: '../../dist/assets/img/brincos_produto.png' },
+  { id: 4, name: 'Bracelete', image: '../../dist/assets/img/bracelete_produto.png' },
 ];
 
 const products = [
-  { id: 1, name: 'Anel de Diamante Solitário', price: 'R$ 2.999', image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&q=80&w=400' },
-  { id: 2, name: 'Colar de Pérolas', price: 'R$ 1.499', image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&q=80&w=400' },
-  { id: 3, name: 'Brincos de Ouro', price: 'R$ 899', image: 'https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&q=80&w=400' },
-  { id: 4, name: 'Pulseira de Diamantes', price: 'R$ 3.999', image: 'https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&q=80&w=400' },
+  { id: 1, name: 'Brinco', price: 'R$ 2.999', image: '../../dist/assets/img/brinco_mais_comprado.png' },
+  { id: 2, name: 'Anel', price: 'R$ 1.499', image: '../../dist/assets/img/modelo_anel.png'},
+  { id: 3, name: 'Cordão', price: 'R$ 899', image: '../../dist/assets/img/cordao_produto.png' },
+  { id: 4, name: 'Brinco', price: 'R$ 3.999', image: '../../dist/assets/img/brincos_produto.png' },
 ];
 
 const gallery = {
@@ -132,7 +132,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* Gallery */}
+      {/* Gallery
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -143,7 +143,7 @@ function HomePage() {
             </Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Featured Images */}
+            Featured Images
             <div className="grid gap-8">
               {gallery.featured.map((image, index) => (
                 <div key={index} className="relative overflow-hidden rounded-lg">
@@ -155,7 +155,7 @@ function HomePage() {
                 </div>
               ))}
             </div>
-            {/* Grid Images */}
+            Grid Images
             <div className="grid grid-cols-2 gap-8">
               {gallery.grid.map((image, index) => (
                 <div key={index} className="relative overflow-hidden rounded-lg">
@@ -166,6 +166,109 @@ function HomePage() {
                   />
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+      </section> */}
+
+      {/* Gallery */}
+      {/* <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Coleção Momentos Brilhantes</h2>
+            <p className="text-gray-600 mb-6">Design brilhante e acabamento incomparável.</p>
+            <Link to="/products" className="text-[#60AACD] hover:text-[#4d8ba8] transition duration-300">
+              Ver coleção
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[...gallery.featured, ...gallery.grid].map((image, index) => (
+              <div key={index} className="relative overflow-hidden rounded-lg">
+                <img 
+                  src={image} 
+                  alt={`Imagem coleção ${index + 1}`} 
+                  className="w-full h-[250px] object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section> */}
+       {/* Gallery */}
+       <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Coleção Momentos Brilhantes</h2>
+            <p className="text-gray-600 mb-6">Design brilhante e acabamento incomparável.</p>
+            <Link
+              to="/products"
+              className="mt-3 w-full bg-[#60AACD] text-white py-2 px-4 rounded hover:bg-[#4d8ba8] transition duration-300 text-center"
+            >
+              Ver coleção
+            </Link>
+          </div>
+          {/* <div className="grid grid-cols-1 md:grid-cols-2">
+          <div className="lg:col-span-1 lg:row-span-3 md:mr-6 mb-6 md:mb-0">
+            <img 
+                src="https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?auto=format&fit=crop&q=80&w=800" 
+                alt="Joia em modelo 1" 
+                className="w-full h-full object-cover rounded-lg"
+              />
+            </div>
+            <div className="grid grid-cols-1 gap-6">
+              <img 
+                src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&q=80&w=800" 
+                alt="Alianças" 
+                className="w-full h-60 object-cover rounded-lg"
+              />
+              <img 
+                src="https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&q=80&w=800" 
+                alt="Brincos" 
+                className="w-full h-60 object-cover rounded-lg"
+              />
+            </div>
+            <img 
+                src="https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?auto=format&fit=crop&q=80&w=800" 
+                alt="Joia em modelo 1" 
+                className="w-full h-full object-cover rounded-lg"
+              />
+          </div> */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 items-stretch">
+            {/* Imagem grande à esquerda */}
+            <div className="lg:row-span-2 md:mr-6 mb-6 md:mb-0">
+              <img 
+                src="../../dist/assets/img/modelo_brinco.png" 
+                alt="Joia modelo esquerda" 
+                className="w-full h-full object-cover rounded-lg"
+              />
+            </div>
+
+            {/* Duas imagens no centro */}
+            <div className="flex flex-col gap-6">
+              <img 
+                src="../../dist/assets/img/modelo_bracelete.png" 
+                alt="Alianças" 
+                className="w-full h-full object-cover rounded-lg"
+              />
+              <img 
+                src="../../dist/assets/img/modelo_cordao.png" 
+                alt="Brincos" 
+                className="w-full h-full object-cover rounded-lg"
+              />
+              {/* <img 
+                src="../../dist/assets/img/modelo_anel.png" 
+                alt="Brincos" 
+                className="w-full h-full object-cover rounded-lg"
+              /> */}
+            </div>
+
+            {/* Imagem grande à direita */}
+            <div className="lg:row-span-2 md:ml-6 mb-6 md:mb-0">
+              <img 
+                src="../../dist/assets/img/modelo_brinco_2.png" 
+                alt="Joia modelo direita" 
+                className="w-full h-full object-cover rounded-lg"
+              />
             </div>
           </div>
         </div>
@@ -203,7 +306,7 @@ function HomePage() {
       </section>
 
       {/* People Wearing Section */}
-      <section className="py-16 bg-white">
+      {/* <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-12">Inspire-se</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -221,7 +324,7 @@ function HomePage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Testimonials */}
       <TestimonialsSection />
